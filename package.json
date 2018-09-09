@@ -1,0 +1,20 @@
+{
+  "name": "mati",
+  "version": "0.0.1",
+  "description": "Mati coding challenge",
+  "main": "server.js",
+  "repository": "https://github.com/AlexisLeon/nodejs-coding-callenge.git",
+  "author": "Alexis Leon <alexis.leon@icloud.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/.bin/nodemon server.js -e js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
