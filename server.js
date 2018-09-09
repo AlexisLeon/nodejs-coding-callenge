@@ -1,3 +1,5 @@
+global.__app = __dirname + '/src/';
+
 const express = require('express');
 const morgan = require('morgan');
 
@@ -11,10 +13,11 @@ process.on('uncaughtException', (error) => {
   console.log(error.stack);
 });
 
+app.use('/health', require('./src/controllers/health'))
 app.use('*', (req, res) => {
-    res.json({
-        hello: 'world' 
-    })
+  res.json({
+    hello: 'world'
+  })
 });
 
 app.listen('3000', () => {
