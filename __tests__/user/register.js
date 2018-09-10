@@ -34,16 +34,24 @@ describe('Register user', () => {
       expect(res.body).toHaveProperty('updated');
     }));
 
-  test('Should not create user with existing email', () => request(app)
-    .post(endpoint)
-    .set(headers)
-    .send(body)
-    .expect(400)
-    .then((res) => {
-      expect(res.body).toBeInstanceOf(Object);
-      expect(res.body).toHaveProperty('error');
-      expect(res.body).toHaveProperty('error.type', 'invalid_request_error');
-    }));
+  test('Should not create user with existing email', () => {
+    // Create user to override
+    return request(app)
+      .post(endpoint)
+      .set(headers)
+      .send(body)
+      .then(() => request(app)
+        .post(endpoint)
+        .set(headers)
+        .send(body)
+        .expect(400)
+        .then((res) => {
+          expect(res.body).toBeInstanceOf(Object);
+          expect(res.body).toHaveProperty('error');
+          expect(res.body).toHaveProperty('error.type', 'invalid_request_error');
+        })
+      )
+  });
 
   describe('Should return error when required fields are missing', () => {
     const testCases = [
