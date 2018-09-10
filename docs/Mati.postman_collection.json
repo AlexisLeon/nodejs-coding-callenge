@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "d958e37a-a75b-446f-85f2-d3b6c051f4ce",
+		"name": "Mati",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"alexis.leon@icloud.com\",\n\t\"password\": \"dev\",\n\t\"name\": \"Alex\"\n}"
+				},
+				"url": {
+					"raw": "{{API_PROTOCOL}}://{{API_HOST}}/",
+					"protocol": "{{API_PROTOCOL}}",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"alexis.leon@icloud.com\",\n\t\"password\": \"dev\",\n\t\"name\": \"Alex\"\n}"
+				},
+				"url": {
+					"raw": "{{API_PROTOCOL}}://{{API_HOST}}/hello",
+					"protocol": "{{API_PROTOCOL}}",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"grant_type\": \"password\",\n\t\"username\": \"alexis.leon@icloud.com\",\n\t\"password\": \"dev\"\n}"
+				},
+				"url": {
+					"raw": "{{API_PROTOCOL}}://{{API_HOST}}/auth",
+					"protocol": "{{API_PROTOCOL}}",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
