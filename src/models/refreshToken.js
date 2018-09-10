@@ -23,4 +23,4 @@ const modelSchema = new Schema({
   },
 }, config)
 
-module.export = Mongo.model('RefreshToken', modelSchema)
+module.exports = Mongo.model('RefreshToken', modelSchema)

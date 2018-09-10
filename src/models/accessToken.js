@@ -23,4 +23,4 @@ const modelSchema = new Schema({
   },
 }, config)
 
-module.export = Mongo.model('AccessToken', modelSchema)
+module.exports = Mongo.model('AccessToken', modelSchema)

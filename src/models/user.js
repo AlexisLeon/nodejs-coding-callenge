@@ -19,4 +19,4 @@ const modelSchema = new Schema({
   },
 }, config)
 
-module.export = Mongo.model('User', modelSchema)
+module.exports = Mongo.model('User', modelSchema)
