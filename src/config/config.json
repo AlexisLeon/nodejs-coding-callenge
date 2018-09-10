@@ -13,8 +13,8 @@
   },
 
   "oauth": {
-    "secretKey": "UiOntRlISwo9fykaWZ5IiwiZXF1aXc3RhmGVOGW1lcyI6WyJiwibW9aW5pdCIsIm",
-    "algorithm": "HS256",
+    "secretKey": "mEsNktCzbvCsGYUM0flYBfv3wLjtngMa",
+    "algorithm": "aes-256-cbc",
     "expiresIn": "30 minutes"
   },
 
