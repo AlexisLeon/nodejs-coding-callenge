@@ -4,6 +4,7 @@ const {
   ApiError,
   errorTypes,
   sendApiError,
+  sendApiResponse,
 } = require('../../middleware/api');
 
 module.exports = function (req, res) {
