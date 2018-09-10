@@ -1,4 +1,9 @@
 const { validationResult } = require('express-validator/check');
+const {
+  ApiError,
+  errorTypes,
+  sendApiError,
+} = require('./api');
 
 /**
  * validate
@@ -26,13 +31,10 @@ module.exports = (req, res, next) => {
   if (!validationErrors.isEmpty()) {
     const error = validationErrors.array()[0];
 
-    return res.status(400).json({
-      error: {
-        message: error.msg,
-        type: 'invalid_request_error',
-        param: error.param,
-      },
-    });
+    return sendApiError(res, new ApiError(error.msg, {
+      type: errorTypes.INVALID_REQUEST_ERROR,
+      param: error.param,
+    }));
   }
 
   next();
