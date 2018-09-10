@@ -10,13 +10,13 @@ const uri = `mongodb://${credentials}${host}/${database}`
 
 const config = {
   useNewUrlParser: true,
-  poolSize: 4
-}
+  poolSize: 4,
+};
 
-mongoose.Promise = global.Promise;
+mongoose.Promise = Promise;
 mongoose.connect(uri, config, (err, db) => {
-  if(err) console.log(err.message);
-  else if (db.readyState == 1){
+  if (err) console.log(err.message);
+  else if (db.readyState === 1) {
     console.log('Mongo DB: Connection has been established successfully.');
   }
 });
@@ -25,5 +25,4 @@ module.exports = {
   db: mongoose.connection,
   Mongo: mongoose,
   Schema: mongoose.Schema,
-  close: () => db.close(),
-}
+};

@@ -26,11 +26,15 @@ module.exports = [
     .withMessage('password param is required.')
     .not()
     .isEmpty()
-    .withMessage('Invalid password param: must not be empty.'),
+    .withMessage('Invalid password param: must not be empty.')
+    .isString()
+    .withMessage('Invalid password param: must be a string.'),
   body('name')
     .exists()
     .withMessage('name param is required.')
     .not()
     .isEmpty()
-    .withMessage('Invalid name param: must not be empty.'),
+    .withMessage('Invalid name param: must not be empty.')
+    .isString()
+    .withMessage('Invalid password param: must be a string.'),
 ];

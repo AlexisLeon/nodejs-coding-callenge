@@ -1,22 +1,22 @@
-const { Schema, Mongo } = require('../init/db')
+const { Schema, Mongo } = require('../init/db');
 
 const config = {
-  timestamps: true
-}
+  timestamps: true,
+};
 
 const modelSchema = new Schema({
   username: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
-}, config)
+}, config);
 
-module.exports = Mongo.model('User', modelSchema)
+module.exports = Mongo.model('User', modelSchema);

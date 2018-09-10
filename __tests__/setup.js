@@ -1,8 +1,10 @@
 const request = require('supertest');
 const app = require('./../server');
 const config = require('./config');
+const { db } = require('../src/init/db');
 
 beforeAll((done) => {
+  db.dropDatabase();
   // request(app)
   //   .post('/oauth/token')
   //   .set({

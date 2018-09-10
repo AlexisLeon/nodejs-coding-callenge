@@ -9,12 +9,15 @@ module.exports = function (req, res) {
   };
 
   return User.findOne({
-    email: user.email,
+    username: user.username,
   })
     .then((result) => {
       if (result) {
         return Promise.reject(res.status(400).json({
-          message: 'User already exists',
+          error: {
+            message: 'User already exists',
+            type: 'invalid_request_error',
+          },
         }));
       }
     }).then(() => {
@@ -31,5 +34,5 @@ module.exports = function (req, res) {
       created: newUser.createdAt,
       updated: newUser.updatedAt,
     }))
-    .catch(err => Promise.reject(err));
+    .catch(() => {});
 };

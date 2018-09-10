@@ -1,17 +1,17 @@
-const { Schema, Mongo } = require('../init/db')
+const { Schema, Mongo } = require('../init/db');
 
 const config = {
-  timestamps: true
-}
+  timestamps: true,
+};
 
 const modelSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
   },
   accessToken: {
     type: String,
-    required: true
+    required: true,
   },
   expires: {
     type: Date,
@@ -19,8 +19,8 @@ const modelSchema = new Schema({
   },
   scope: {
     type: String,
-    required: true
+    required: true,
   },
-}, config)
+}, config);
 
-module.exports = Mongo.model('AccessToken', modelSchema)
+module.exports = Mongo.model('AccessToken', modelSchema);

@@ -27,9 +27,11 @@ module.exports = (req, res, next) => {
     const error = validationErrors.array()[0];
 
     return res.status(400).json({
-      message: error.msg,
-      type: 'validation_error',
-      param: error.param,
+      error: {
+        message: error.msg,
+        type: 'invalid_request_error',
+        param: error.param,
+      },
     });
   }
 
