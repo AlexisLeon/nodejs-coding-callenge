@@ -36,5 +36,5 @@ module.exports = [
     .isEmpty()
     .withMessage('Invalid name param: must not be empty.')
     .isString()
-    .withMessage('Invalid password param: must be a string.'),
+    .withMessage('Invalid name param: must be a string.'),
 ];
