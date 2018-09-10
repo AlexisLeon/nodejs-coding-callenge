@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/mati
+
+    docker:
+      - image: circleci/node:9.8
+      - image: mongo:3.6
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ .Branch }}-{{ .Revision }}-{{ checksum "package.json" }}
+            - v1-dependencies
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ .Branch }}-{{ .Revision }}-{{ checksum "package.json" }}
+
+      - run: yarn run test --maxWorkers=1 --silent=false
+      # - run: yarn lint

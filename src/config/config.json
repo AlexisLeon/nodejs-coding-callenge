@@ -1,0 +1,34 @@
+{
+  "app": {
+    "locale": "es-MX",
+    "application": "mati-challenge",
+    "applicationUid": "mati-challenge",
+    "applicationPassword": "secretpassword",
+    "environment": "development",
+    "cryptoKey": "CUSTOM_CRYPTOKEY",
+    "host": "localhost",
+    "port": "3000",
+    "timeout": 600000,
+    "log": "dev"
+  },
+
+  "oauth": {
+    "secretKey": "mEsNktCzbvCsGYUM0flYBfv3wLjtngMa",
+    "algorithm": "aes-256-cbc",
+    "expiresIn": "30 minutes"
+  },
+
+  "sentry": {
+    "key": "SENTRY_KEY",
+    "secret": "SENTRY_SECRET",
+    "project": "SENTRY_PROJECT"
+  },
+
+  "mongo": {
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "database": "matidev",
+    "port": 27017
+  }
+}
