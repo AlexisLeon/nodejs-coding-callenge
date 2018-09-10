@@ -8,7 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/nodemon server.js -e js",
+    "start": "NODE_ENV=production node server.js",
+    "stage": "NODE_ENV=stage node server.js",
+    "dev": "NODE_ENV=dev node_modules/.bin/nodemon server.js -e js ",
     "test": "NODE_ENV=test jest --silent --verbose --forceExit"
   },
   "dependencies": {
