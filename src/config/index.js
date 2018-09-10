@@ -9,6 +9,7 @@ const production = environment === 'production' || environment === 'stage';
 if (production) {
   conf.set('app:port', process.env.PORT);
   conf.set('app:environment', environment);
+  conf.set('oauth:secretKey', process.env.ENCRYPTION_KEY);
 
   conf.set('mongo:database', process.env.MONGO_DB_NAME);
   conf.set('mongo:username', process.env.MONGO_USERNAME);
